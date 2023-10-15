@@ -19,6 +19,10 @@ services:
       context: ../logger-service
       dockerfile: logger-service.dockerfile
     restart: always
+    environment:
+      PORT: "8082"
+    ports:
+      - "8082:80"
     deploy:
       mode: replicated
       replicas: 1
@@ -55,6 +59,9 @@ services:
     image: "mongo:4.2.17-bionic"
     ports:
       - "27017:27017"
+    deploy:
+      mode: replicated
+      replicas: 1
     environment:
       MONGO_INITDB_DATABASE: logs
       MONGO_INITDB_ROOT_USERNAME: admin
