@@ -19,9 +19,35 @@ services:
       context: ../logger-service
       dockerfile: logger-service.dockerfile
     restart: always
+    # environment:
+    #   PORT: "8082"
+    # ports:
+    #   - "8082:80"
     deploy:
       mode: replicated
       replicas: 1
+
+  mailer-service:
+    build:
+      context: ../mail-service
+      dockerfile: mail-service.dockerfile
+    restart: always
+    # environment:
+    #   PORT: "8083"
+    # ports:
+    #   - "8083:80"
+    deploy:
+      mode: replicated
+      replicas: 1
+    environment:
+      MAILER_DOMAIN: localhost
+      MAILER_HOST: mailhog
+      MAILER_PORT: 1025
+      MAILER_ENCRYPTION: none
+      MAILER_USERNAME: ""
+      MAILER_PASSWORD: ""
+      FROM_NAME: "John Smith"
+      FROM_ADDRESS: john.smith@example.com
 
   authentication-service:
     build:
