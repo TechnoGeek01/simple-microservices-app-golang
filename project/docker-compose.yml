@@ -105,4 +105,4 @@ services:
       mode: replicated
       replicas: 1
     volumes:
-     - ./db-data/rabbitmq/:/var/lib/rabbitmq/
+      - ./db-data/rabbitmq/:/var/lib/rabbitmq/
