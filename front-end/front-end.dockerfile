@@ -4,4 +4,4 @@ RUN mkdir /app
 
 COPY frontEndApp.exe /app
 
-CMD ["/app/frontEndApp"]
+CMD ["/app/frontEndApp.exe"]
