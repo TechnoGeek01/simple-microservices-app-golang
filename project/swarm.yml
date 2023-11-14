@@ -11,8 +11,8 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - caddy_data:/data
-      - caddy_config:/config
+      - ./caddy_data:/data
+      - ./caddy_config:/config
 
   front-end:
     image: suzombie/front-end:1.0.0
@@ -104,4 +104,3 @@ volumes:
   caddy_data:
     external: true
   caddy_config:
-    external: true
