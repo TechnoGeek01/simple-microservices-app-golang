@@ -7,3 +7,5 @@ loggerServiceApp
 mailerApp
 listenerApp
 frontEndApp.exe
+caddy_data
+caddy_config
