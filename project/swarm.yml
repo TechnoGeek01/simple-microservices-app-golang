@@ -3,7 +3,7 @@ version: '3'
 services:
 
   caddy:
-    image: suzombie/micro-caddie:1.0.0
+    image: suzombie/micro-caddy:1.0.0
     deploy:
       mode: replicated
       replicas: 1
